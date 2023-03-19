@@ -115,9 +115,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">المقالات</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">الوسوم</span>
       </div>
   </nav>
 </div>
@@ -133,6 +137,77 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://skygrass5.github.io/2023/03/19/%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="skygrass">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skygrass's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Skygrass's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/19/%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0/" class="post-title-link" itemprop="url">日常练习</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">نُشر في</span>
+      
+
+      <time title="أُنشأ: 2023-03-19 09:36:44 / عُدل: 11:53:15" itemprop="dateCreated datePublished" datetime="2023-03-19T09:36:44+08:00">2023-03-19</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>‘’’python<br>import collections<br>from collections import deque<br>n &#x3D; int(input())<br>g &#x3D; []<br>dist &#x3D; [[-1]*n for i in range(n)]#距离数组<br>for i in range(n):<br>    m &#x3D; input()<br>    g.append(m)<br>x1,x2,y1,y2 &#x3D; map(int,input().split())<br>dx &#x3D; [-1,0,1,0]<br>dy &#x3D; [0,1,0,-1]<br>def bfs(maze,start,end):<br>    queue &#x3D; deque()<br>    queue.append(start)#入队<br>    visited &#x3D; set()<br>    visited.add(start)<br>    distance &#x3D; {start:0}<br>    while queue:<br>        cur &#x3D; queue.popleft()<br>        if cur &#x3D;&#x3D; end:<br>            return distance[end]<br>        i,j &#x3D; cur[0],cur[1]<br>        neighbors &#x3D; [(i-1,j),(i+1,j),(i,j-1),(i,j+1)]<br>        for neighbor in neighbors:<br>            if 0 &lt;&#x3D; neighbor[0] &lt; len(maze) and 0 &lt;&#x3D; neighbor[1]&lt;len(maze[0]):<br>                if neighbor not in visited and maze[neighbor[0]][neighbor[1]] !&#x3D; “1”:<br>                    queue.append(neighbor)<br>                    visited.add(neighbor)<br>                    distance[neighbor] &#x3D; distance[cur]+1</p>
+<p>distance &#x3D; bfs(g,(x1-1,x2-1),(y1-1,y2-1))<br>print(distance)<br>‘’’</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
