@@ -190,7 +190,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2023-03-19 13:30:40 / Modified: 13:33:17" itemprop="dateCreated datePublished" datetime="2023-03-19T13:30:40+08:00">2023-03-19</time>
+      <time title="Created: 2023-03-19 13:30:40 / Modified: 13:38:30" itemprop="dateCreated datePublished" datetime="2023-03-19T13:30:40+08:00">2023-03-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -212,8 +212,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>‘’’<br>n,m,t &#x3D; map(int,input().split())<br>sx,sy,fx,fy &#x3D; map(int,input().split())<br>l &#x3D; []<br>res &#x3D; 0<br>for i in range(t):<br>    x,y &#x3D; map(int,input().split())<br>    l.append((x-1,y-1))<br>dx &#x3D; [-1,0,1,0]<br>dy &#x3D; [0,1,0,-1]<br>g &#x3D; [[1]*m for i in range(n)]<br>st &#x3D; [[0]*m for i in range(n)]<br>for x,y in l:<br>    g[x][y]&#x3D;0<br>def dfs(x,y):<br>    global res<br>    if x &#x3D;&#x3D; fx-1 and y &#x3D;&#x3D; fy-1:<br>        res +&#x3D;1<br>        return<br>    else:<br>        for i in range(4):<br>            lx &#x3D; x+dx[i]<br>            ly &#x3D; y+dy[i]<br>            if lx&lt;0 or lx&gt;&#x3D;n or ly&lt;0 or ly&gt;&#x3D;m:<br>                continue<br>            if st[lx][ly]&#x3D;&#x3D;0 and g[lx][ly]&#x3D;&#x3D;1:<br>                st[x][y]&#x3D;1<br>                dfs(lx,ly)<br>                st[x][y]&#x3D;0</p>
-<p>dfs(sx-1,sy-1)<br>st[sx-1][sy-1]&#x3D;1<br>print(res)<br>‘’’</p>
+          <p>“””<br>n,m,t &#x3D; map(int,input().split())<br>sx,sy,fx,fy &#x3D; map(int,input().split())<br>l &#x3D; []<br>res &#x3D; 0<br>for i in range(t):<br>    x,y &#x3D; map(int,input().split())<br>    l.append((x-1,y-1))<br>dx &#x3D; [-1,0,1,0]<br>dy &#x3D; [0,1,0,-1]<br>g &#x3D; [[1]*m for i in range(n)]<br>st &#x3D; [[0]*m for i in range(n)]<br>for x,y in l:<br>    g[x][y]&#x3D;0<br>def dfs(x,y):<br>    global res<br>    if x &#x3D;&#x3D; fx-1 and y &#x3D;&#x3D; fy-1:<br>        res +&#x3D;1<br>        return<br>    else:<br>        for i in range(4):<br>            lx &#x3D; x+dx[i]<br>            ly &#x3D; y+dy[i]<br>            if lx&lt;0 or lx&gt;&#x3D;n or ly&lt;0 or ly&gt;&#x3D;m:<br>                continue<br>            if st[lx][ly]&#x3D;&#x3D;0 and g[lx][ly]&#x3D;&#x3D;1:<br>                st[x][y]&#x3D;1<br>                dfs(lx,ly)<br>                st[x][y]&#x3D;0</p>
+<p>dfs(sx-1,sy-1)<br>st[sx-1][sy-1]&#x3D;1<br>print(res)<br>“””</p>
 
       
     </div>
