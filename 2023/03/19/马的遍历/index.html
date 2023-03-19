@@ -27,11 +27,11 @@
 <meta property="og:description" content="1234567891011121314151617181920212223242526import collectionsfrom collections import dequen,m,x,y &#x3D; map(int,input().split())#输入图的大小和起点坐标x &#x3D; x-1#python从0开始y &#x3D; y-1dx &#x3D; [-2,-1,1,2,2,1,-1,-2]#移动的距离列表 x,y是">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-03-19T08:49:53.000Z">
-<meta property="article:modified_time" content="2023-03-19T09:02:09.868Z">
+<meta property="article:modified_time" content="2023-03-19T09:06:36.404Z">
 <meta property="article:author" content="skygrass">
+<meta property="article:tag" content="python">
 <meta property="article:tag" content="bfs">
 <meta property="article:tag" content="queue">
-<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
 
 
@@ -102,7 +102,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -115,6 +115,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B"><span class="nav-number">1.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">输出样例</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -196,7 +197,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2023-03-19 16:49:53 / Modified: 17:02:09" itemprop="dateCreated datePublished" datetime="2023-03-19T16:49:53+08:00">2023-03-19</time>
+      <time title="Created: 2023-03-19 16:49:53 / Modified: 17:06:36" itemprop="dateCreated datePublished" datetime="2023-03-19T16:49:53+08:00">2023-03-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -219,6 +220,8 @@
     
     <div class="post-body" itemprop="articleBody">
         <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">n,m,x,y = <span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())<span class="comment">#输入图的大小和起点坐标</span></span><br><span class="line">x = x-<span class="number">1</span><span class="comment">#python从0开始</span></span><br><span class="line">y = y-<span class="number">1</span></span><br><span class="line">dx = [-<span class="number">2</span>,-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">2</span>]<span class="comment">#移动的距离列表 x,y是一对的</span></span><br><span class="line">dy = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">2</span>,-<span class="number">2</span>,-<span class="number">1</span>]</span><br><span class="line">g = [[-<span class="number">1</span>]*m <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)]<span class="comment">#初始化图</span></span><br><span class="line">g[x][y] =<span class="number">0</span><span class="comment">#当前位置是0</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">bfs</span>(<span class="params">maze,x,y</span>):<span class="comment">#maze是图 x,y是初始坐标</span></span><br><span class="line">    queue = deque()<span class="comment">#初始化队列</span></span><br><span class="line">    queue.append((x,y))<span class="comment">#将初始坐标以元组形式输入列表</span></span><br><span class="line">    <span class="keyword">while</span> queue:<span class="comment">#队列不空</span></span><br><span class="line">        x,y = queue.popleft()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">8</span>):<span class="comment">#遍历每个方向</span></span><br><span class="line">            a = x+dx[i]</span><br><span class="line">            b = y+dy[i]</span><br><span class="line">            <span class="keyword">if</span> <span class="number">0</span>&lt;=a&lt;n <span class="keyword">and</span> <span class="number">0</span>&lt;=b&lt;m <span class="keyword">and</span> g[a][b]==-<span class="number">1</span>:<span class="comment">#不越界且没访问过</span></span><br><span class="line">                g[a][b]=g[x][y]+<span class="number">1</span><span class="comment">#现在点的距离比上一个大1</span></span><br><span class="line">                queue.append((a,b))<span class="comment">#将这个点加入队列中</span></span><br><span class="line"></span><br><span class="line">bfs(g,x,y)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">        <span class="built_in">print</span>(g[i][j],end=<span class="string">&quot;    &quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot; &quot;</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h1><p>3 3 1 1 </p>
+<h1 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h1><p>0    3    2<br>3    -1   1<br>2    1    4    </p>
 
     </div>
 
@@ -228,9 +231,9 @@
 
     <footer class="post-footer">
           <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
               <a href="/tags/bfs/" rel="tag"># bfs</a>
               <a href="/tags/queue/" rel="tag"># queue</a>
-              <a href="/tags/python/" rel="tag"># python</a>
           </div>
 
         
