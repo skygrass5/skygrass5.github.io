@@ -27,7 +27,7 @@
 <meta property="og:description" content="1234567891011121314151617181920212223242526272829303132import collectionsfrom collections import dequen, m, a, b &#x3D; map(int, input().split())start &#x3D; []r &#x3D; []for i in range(a):    x, y &#x3D; map(int, input(">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-03-19T16:25:05.000Z">
-<meta property="article:modified_time" content="2023-03-19T16:33:35.258Z">
+<meta property="article:modified_time" content="2023-03-19T16:40:57.106Z">
 <meta property="article:author" content="skygrass">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="queue">
@@ -102,7 +102,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -115,6 +115,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">输出格式</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -196,7 +197,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2023-03-20 00:25:05 / Modified: 00:33:35" itemprop="dateCreated datePublished" datetime="2023-03-20T00:25:05+08:00">2023-03-20</time>
+      <time title="Created: 2023-03-20 00:25:05 / Modified: 00:40:57" itemprop="dateCreated datePublished" datetime="2023-03-20T00:25:05+08:00">2023-03-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -219,7 +220,8 @@
     
     <div class="post-body" itemprop="articleBody">
         <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">n, m, a, b = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">start = []</span><br><span class="line">r = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(a):</span><br><span class="line">    x, y = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">    start.append((x-<span class="number">1</span>, y-<span class="number">1</span>))</span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(b):</span><br><span class="line">    x1, y1 = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">    r.append((x1-<span class="number">1</span>, y1-<span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">g = [[-<span class="number">1</span>]*m <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">time = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">bfs</span>(<span class="params">maze,start,time</span>):<span class="comment">#start作为一个带有元组的列表，时间初始化成0</span></span><br><span class="line">    queue = deque(start)<span class="comment">#start入队即所有的元素都入队 实现多个起点</span></span><br><span class="line">    <span class="keyword">for</span> x,y <span class="keyword">in</span> start:</span><br><span class="line">        maze[x][y] = <span class="number">0</span><span class="comment">#当前位置是0 </span></span><br><span class="line">    <span class="keyword">while</span> queue:</span><br><span class="line">        x, y = queue.popleft()</span><br><span class="line">        time = maze[x][y]</span><br><span class="line">        <span class="keyword">for</span> dx, dy <span class="keyword">in</span> [(<span class="number">0</span>, <span class="number">1</span>), (<span class="number">0</span>, -<span class="number">1</span>), (<span class="number">1</span>, <span class="number">0</span>), (-<span class="number">1</span>, <span class="number">0</span>)]:<span class="comment">#方向数组</span></span><br><span class="line">            nx = x + dx</span><br><span class="line">            ny = y + dy</span><br><span class="line">            <span class="keyword">if</span> <span class="number">0</span> &lt;= nx &lt; n <span class="keyword">and</span> <span class="number">0</span> &lt;= ny &lt; m <span class="keyword">and</span> maze[nx][ny]==-<span class="number">1</span>:<span class="comment">#不越界且未访问</span></span><br><span class="line">                maze[nx][ny] = time+<span class="number">1</span><span class="comment">#当前时间是上一个时间+1</span></span><br><span class="line">                queue.append((nx, ny))<span class="comment">#入队</span></span><br><span class="line">    <span class="keyword">return</span> maze<span class="comment">#返回现在的时间图</span></span><br><span class="line">maze = bfs(g, start,time)</span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> r:</span><br><span class="line">    <span class="built_in">print</span>(maze[x][y])</span><br></pre></td></tr></table></figure>
-<p>#输入格式<br>第1行：四个整数 n，m，a，b，表示军团矩阵有 n 行 m 列。有 a 个感染源，b 为血色敢死队中领主的数量。接下来 a 行：每行有两个整数 x,y，表示感染源在第 x 行第 y 列。接下来 b 行：每行有两个整数 x，y，表示领主的位置在第 x 行第 y 列。<br>#输出格式<br>第 1 至 b 行：每行一个整数，表示这个领主感染瘟疫的时间，输出顺序与输入顺序一致。如果某个人的位置在感染源，那么他感染瘟疫的时间为0</p>
+<h1 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h1><p>第1行：四个整数 n，m，a，b，表示军团矩阵有 n 行 m 列。有 a 个感染源，b 为血色敢死队中领主的数量。接下来 a 行：每行有两个整数 x,y，表示感染源在第 x 行第 y 列。接下来 b 行：每行有两个整数 x，y，表示领主的位置在第 x 行第 y 列。</p>
+<h1 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h1><p>第 1 至 b 行：每行一个整数，表示这个领主感染瘟疫的时间，输出顺序与输入顺序一致。如果某个人的位置在感染源，那么他感染瘟疫的时间为0</p>
 
     </div>
 
