@@ -19,29 +19,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"skygrass5.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="1234567891011121314151617181920212223242526272829303132n,m,t &#x3D; map(int,input().split())sx,sy,fx,fy &#x3D; map(int,input().split())l &#x3D; []res &#x3D; 0for i in range(t):    x,y &#x3D; map(int,input().split())    l.appe">
+    <meta name="description" content="1234567891011121314151617181920212223242526import collectionsfrom collections import dequen,m,x,y &#x3D; map(int,input().split())#输入图的大小和起点坐标x &#x3D; x-1#python从0开始y &#x3D; y-1dx &#x3D; [-2,-1,1,2,2,1,-1,-2]#移动的距离列表 x,y是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="迷宫的路线问题">
-<meta property="og:url" content="http://skygrass5.github.io/2023/03/19/article/index.html">
+<meta property="og:title" content="1443马的遍历">
+<meta property="og:url" content="http://skygrass5.github.io/2023/03/19/%E9%A9%AC%E7%9A%84%E9%81%8D%E5%8E%86/index.html">
 <meta property="og:site_name" content="Skygrass&#39;s Blog">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132n,m,t &#x3D; map(int,input().split())sx,sy,fx,fy &#x3D; map(int,input().split())l &#x3D; []res &#x3D; 0for i in range(t):    x,y &#x3D; map(int,input().split())    l.appe">
+<meta property="og:description" content="1234567891011121314151617181920212223242526import collectionsfrom collections import dequen,m,x,y &#x3D; map(int,input().split())#输入图的大小和起点坐标x &#x3D; x-1#python从0开始y &#x3D; y-1dx &#x3D; [-2,-1,1,2,2,1,-1,-2]#移动的距离列表 x,y是">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-03-19T05:30:40.000Z">
-<meta property="article:modified_time" content="2023-03-19T05:42:15.733Z">
+<meta property="article:published_time" content="2023-03-19T08:49:53.000Z">
+<meta property="article:modified_time" content="2023-03-19T09:02:09.868Z">
 <meta property="article:author" content="skygrass">
+<meta property="article:tag" content="bfs">
+<meta property="article:tag" content="queue">
 <meta property="article:tag" content="python">
-<meta property="article:tag" content="dfs">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://skygrass5.github.io/2023/03/19/article/">
+<link rel="canonical" href="http://skygrass5.github.io/2023/03/19/%E9%A9%AC%E7%9A%84%E9%81%8D%E5%8E%86/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://skygrass5.github.io/2023/03/19/article/","path":"2023/03/19/article/","title":"迷宫的路线问题"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://skygrass5.github.io/2023/03/19/%E9%A9%AC%E7%9A%84%E9%81%8D%E5%8E%86/","path":"2023/03/19/马的遍历/","title":"1443马的遍历"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>迷宫的路线问题 | Skygrass's Blog</title>
+<title>1443马的遍历 | Skygrass's Blog</title>
   
 
 
@@ -165,7 +166,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://skygrass5.github.io/2023/03/19/article/">
+    <link itemprop="mainEntityOfPage" href="http://skygrass5.github.io/2023/03/19/%E9%A9%AC%E7%9A%84%E9%81%8D%E5%8E%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/logo.jpg">
@@ -178,12 +179,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="迷宫的路线问题 | Skygrass's Blog">
+      <meta itemprop="name" content="1443马的遍历 | Skygrass's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          迷宫的路线问题
+          1443马的遍历
         </h1>
 
         <div class="post-meta-container">
@@ -195,7 +196,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2023-03-19 13:30:40 / Modified: 13:42:15" itemprop="dateCreated datePublished" datetime="2023-03-19T13:30:40+08:00">2023-03-19</time>
+      <time title="Created: 2023-03-19 16:49:53 / Modified: 17:02:09" itemprop="dateCreated datePublished" datetime="2023-03-19T16:49:53+08:00">2023-03-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -217,7 +218,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">n,m,t = <span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">sx,sy,fx,fy = <span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">l = []</span><br><span class="line">res = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(t):</span><br><span class="line">    x,y = <span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">    l.append((x-<span class="number">1</span>,y-<span class="number">1</span>))</span><br><span class="line">dx = [-<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>]</span><br><span class="line">dy = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,-<span class="number">1</span>]</span><br><span class="line">g = [[<span class="number">1</span>]*m <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">st = [[<span class="number">0</span>]*m <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> l:</span><br><span class="line">    g[x][y]=<span class="number">0</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">global</span> res</span><br><span class="line">    <span class="keyword">if</span> x == fx-<span class="number">1</span> <span class="keyword">and</span> y == fy-<span class="number">1</span>:</span><br><span class="line">        res +=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">            lx = x+dx[i]</span><br><span class="line">            ly = y+dy[i]</span><br><span class="line">            <span class="keyword">if</span> lx&lt;<span class="number">0</span> <span class="keyword">or</span> lx&gt;=n <span class="keyword">or</span> ly&lt;<span class="number">0</span> <span class="keyword">or</span> ly&gt;=m:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> st[lx][ly]==<span class="number">0</span> <span class="keyword">and</span> g[lx][ly]==<span class="number">1</span>:</span><br><span class="line">                st[x][y]=<span class="number">1</span></span><br><span class="line">                dfs(lx,ly)</span><br><span class="line">                st[x][y]=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">dfs(sx-<span class="number">1</span>,sy-<span class="number">1</span>)</span><br><span class="line">st[sx-<span class="number">1</span>][sy-<span class="number">1</span>]=<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">n,m,x,y = <span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())<span class="comment">#输入图的大小和起点坐标</span></span><br><span class="line">x = x-<span class="number">1</span><span class="comment">#python从0开始</span></span><br><span class="line">y = y-<span class="number">1</span></span><br><span class="line">dx = [-<span class="number">2</span>,-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">2</span>]<span class="comment">#移动的距离列表 x,y是一对的</span></span><br><span class="line">dy = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">2</span>,-<span class="number">2</span>,-<span class="number">1</span>]</span><br><span class="line">g = [[-<span class="number">1</span>]*m <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)]<span class="comment">#初始化图</span></span><br><span class="line">g[x][y] =<span class="number">0</span><span class="comment">#当前位置是0</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">bfs</span>(<span class="params">maze,x,y</span>):<span class="comment">#maze是图 x,y是初始坐标</span></span><br><span class="line">    queue = deque()<span class="comment">#初始化队列</span></span><br><span class="line">    queue.append((x,y))<span class="comment">#将初始坐标以元组形式输入列表</span></span><br><span class="line">    <span class="keyword">while</span> queue:<span class="comment">#队列不空</span></span><br><span class="line">        x,y = queue.popleft()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">8</span>):<span class="comment">#遍历每个方向</span></span><br><span class="line">            a = x+dx[i]</span><br><span class="line">            b = y+dy[i]</span><br><span class="line">            <span class="keyword">if</span> <span class="number">0</span>&lt;=a&lt;n <span class="keyword">and</span> <span class="number">0</span>&lt;=b&lt;m <span class="keyword">and</span> g[a][b]==-<span class="number">1</span>:<span class="comment">#不越界且没访问过</span></span><br><span class="line">                g[a][b]=g[x][y]+<span class="number">1</span><span class="comment">#现在点的距离比上一个大1</span></span><br><span class="line">                queue.append((a,b))<span class="comment">#将这个点加入队列中</span></span><br><span class="line"></span><br><span class="line">bfs(g,x,y)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">        <span class="built_in">print</span>(g[i][j],end=<span class="string">&quot;    &quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot; &quot;</span>)</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -226,22 +228,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
+              <a href="/tags/bfs/" rel="tag"># bfs</a>
+              <a href="/tags/queue/" rel="tag"># queue</a>
               <a href="/tags/python/" rel="tag"># python</a>
-              <a href="/tags/dfs/" rel="tag"># dfs</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/03/19/%E8%BF%B7%E5%AE%AB/" rel="prev" title="迷宫最短路问题">
-                  <i class="fa fa-chevron-left"></i> 迷宫最短路问题
+                <a href="/2023/03/19/article/" rel="prev" title="迷宫的路线问题">
+                  <i class="fa fa-chevron-left"></i> 迷宫的路线问题
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/03/19/%E9%A9%AC%E7%9A%84%E9%81%8D%E5%8E%86/" rel="next" title="1443马的遍历">
-                  1443马的遍历 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
