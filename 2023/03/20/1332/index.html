@@ -19,29 +19,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"skygrass5.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="1234567891011121314151617181920212223242526272829303132n,m,t &#x3D; map(int,input().split())sx,sy,fx,fy &#x3D; map(int,input().split())l &#x3D; []res &#x3D; 0for i in range(t):    x,y &#x3D; map(int,input().split())    l.appe">
+    <meta name="description" content="1234567891011121314151617181920212223242526272829303132import collectionsfrom collections import dequen, m, a, b &#x3D; map(int, input().split())start &#x3D; []r &#x3D; []for i in range(a):    x, y &#x3D; map(int, input(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="迷宫的路线问题">
-<meta property="og:url" content="http://skygrass5.github.io/2023/03/19/article/index.html">
+<meta property="og:title" content="1332多起点bfs">
+<meta property="og:url" content="http://skygrass5.github.io/2023/03/20/1332/index.html">
 <meta property="og:site_name" content="Skygrass&#39;s Blog">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132n,m,t &#x3D; map(int,input().split())sx,sy,fx,fy &#x3D; map(int,input().split())l &#x3D; []res &#x3D; 0for i in range(t):    x,y &#x3D; map(int,input().split())    l.appe">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132import collectionsfrom collections import dequen, m, a, b &#x3D; map(int, input().split())start &#x3D; []r &#x3D; []for i in range(a):    x, y &#x3D; map(int, input(">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-03-19T05:30:40.000Z">
-<meta property="article:modified_time" content="2023-03-19T05:42:15.733Z">
+<meta property="article:published_time" content="2023-03-19T16:25:05.000Z">
+<meta property="article:modified_time" content="2023-03-19T16:33:35.258Z">
 <meta property="article:author" content="skygrass">
 <meta property="article:tag" content="python">
-<meta property="article:tag" content="dfs">
+<meta property="article:tag" content="queue">
+<meta property="article:tag" content="bfs">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://skygrass5.github.io/2023/03/19/article/">
+<link rel="canonical" href="http://skygrass5.github.io/2023/03/20/1332/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://skygrass5.github.io/2023/03/19/article/","path":"2023/03/19/article/","title":"迷宫的路线问题"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://skygrass5.github.io/2023/03/20/1332/","path":"2023/03/20/1332/","title":"1332多起点bfs"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>迷宫的路线问题 | Skygrass's Blog</title>
+<title>1332多起点bfs | Skygrass's Blog</title>
   
 
 
@@ -165,7 +166,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://skygrass5.github.io/2023/03/19/article/">
+    <link itemprop="mainEntityOfPage" href="http://skygrass5.github.io/2023/03/20/1332/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/logo.jpg">
@@ -178,12 +179,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="迷宫的路线问题 | Skygrass's Blog">
+      <meta itemprop="name" content="1332多起点bfs | Skygrass's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          迷宫的路线问题
+          1332多起点bfs
         </h1>
 
         <div class="post-meta-container">
@@ -195,7 +196,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2023-03-19 13:30:40 / Modified: 13:42:15" itemprop="dateCreated datePublished" datetime="2023-03-19T13:30:40+08:00">2023-03-19</time>
+      <time title="Created: 2023-03-20 00:25:05 / Modified: 00:33:35" itemprop="dateCreated datePublished" datetime="2023-03-20T00:25:05+08:00">2023-03-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -217,7 +218,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">n,m,t = <span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">sx,sy,fx,fy = <span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">l = []</span><br><span class="line">res = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(t):</span><br><span class="line">    x,y = <span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">    l.append((x-<span class="number">1</span>,y-<span class="number">1</span>))</span><br><span class="line">dx = [-<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>]</span><br><span class="line">dy = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,-<span class="number">1</span>]</span><br><span class="line">g = [[<span class="number">1</span>]*m <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">st = [[<span class="number">0</span>]*m <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> l:</span><br><span class="line">    g[x][y]=<span class="number">0</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">global</span> res</span><br><span class="line">    <span class="keyword">if</span> x == fx-<span class="number">1</span> <span class="keyword">and</span> y == fy-<span class="number">1</span>:</span><br><span class="line">        res +=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">            lx = x+dx[i]</span><br><span class="line">            ly = y+dy[i]</span><br><span class="line">            <span class="keyword">if</span> lx&lt;<span class="number">0</span> <span class="keyword">or</span> lx&gt;=n <span class="keyword">or</span> ly&lt;<span class="number">0</span> <span class="keyword">or</span> ly&gt;=m:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> st[lx][ly]==<span class="number">0</span> <span class="keyword">and</span> g[lx][ly]==<span class="number">1</span>:</span><br><span class="line">                st[x][y]=<span class="number">1</span></span><br><span class="line">                dfs(lx,ly)</span><br><span class="line">                st[x][y]=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">dfs(sx-<span class="number">1</span>,sy-<span class="number">1</span>)</span><br><span class="line">st[sx-<span class="number">1</span>][sy-<span class="number">1</span>]=<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">n, m, a, b = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">start = []</span><br><span class="line">r = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(a):</span><br><span class="line">    x, y = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">    start.append((x-<span class="number">1</span>, y-<span class="number">1</span>))</span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(b):</span><br><span class="line">    x1, y1 = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">    r.append((x1-<span class="number">1</span>, y1-<span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">g = [[-<span class="number">1</span>]*m <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">time = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">bfs</span>(<span class="params">maze,start,time</span>):<span class="comment">#start作为一个带有元组的列表，时间初始化成0</span></span><br><span class="line">    queue = deque(start)<span class="comment">#start入队即所有的元素都入队 实现多个起点</span></span><br><span class="line">    <span class="keyword">for</span> x,y <span class="keyword">in</span> start:</span><br><span class="line">        maze[x][y] = <span class="number">0</span><span class="comment">#当前位置是0 </span></span><br><span class="line">    <span class="keyword">while</span> queue:</span><br><span class="line">        x, y = queue.popleft()</span><br><span class="line">        time = maze[x][y]</span><br><span class="line">        <span class="keyword">for</span> dx, dy <span class="keyword">in</span> [(<span class="number">0</span>, <span class="number">1</span>), (<span class="number">0</span>, -<span class="number">1</span>), (<span class="number">1</span>, <span class="number">0</span>), (-<span class="number">1</span>, <span class="number">0</span>)]:<span class="comment">#方向数组</span></span><br><span class="line">            nx = x + dx</span><br><span class="line">            ny = y + dy</span><br><span class="line">            <span class="keyword">if</span> <span class="number">0</span> &lt;= nx &lt; n <span class="keyword">and</span> <span class="number">0</span> &lt;= ny &lt; m <span class="keyword">and</span> maze[nx][ny]==-<span class="number">1</span>:<span class="comment">#不越界且未访问</span></span><br><span class="line">                maze[nx][ny] = time+<span class="number">1</span><span class="comment">#当前时间是上一个时间+1</span></span><br><span class="line">                queue.append((nx, ny))<span class="comment">#入队</span></span><br><span class="line">    <span class="keyword">return</span> maze<span class="comment">#返回现在的时间图</span></span><br><span class="line">maze = bfs(g, start,time)</span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> r:</span><br><span class="line">    <span class="built_in">print</span>(maze[x][y])</span><br></pre></td></tr></table></figure>
+<p>#输入格式<br>第1行：四个整数 n，m，a，b，表示军团矩阵有 n 行 m 列。有 a 个感染源，b 为血色敢死队中领主的数量。接下来 a 行：每行有两个整数 x,y，表示感染源在第 x 行第 y 列。接下来 b 行：每行有两个整数 x，y，表示领主的位置在第 x 行第 y 列。<br>#输出格式<br>第 1 至 b 行：每行一个整数，表示这个领主感染瘟疫的时间，输出顺序与输入顺序一致。如果某个人的位置在感染源，那么他感染瘟疫的时间为0</p>
+
     </div>
 
     
@@ -227,21 +230,19 @@
     <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/python/" rel="tag"># python</a>
-              <a href="/tags/dfs/" rel="tag"># dfs</a>
+              <a href="/tags/queue/" rel="tag"># queue</a>
+              <a href="/tags/bfs/" rel="tag"># bfs</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/03/19/%E8%BF%B7%E5%AE%AB/" rel="prev" title="迷宫最短路问题">
-                  <i class="fa fa-chevron-left"></i> 迷宫最短路问题
+                <a href="/2023/03/19/%E9%A9%AC%E7%9A%84%E9%81%8D%E5%8E%86/" rel="prev" title="1443马的遍历">
+                  <i class="fa fa-chevron-left"></i> 1443马的遍历
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/03/19/%E9%A9%AC%E7%9A%84%E9%81%8D%E5%8E%86/" rel="next" title="1443马的遍历">
-                  1443马的遍历 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
