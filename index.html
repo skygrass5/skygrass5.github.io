@@ -236,17 +236,17 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -263,6 +263,123 @@ mjx-container[display="true"] + br {
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://skygrass5.github.io/2024/04/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/welcome.jpg">
+      <meta itemprop="name" content="skygrass">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Skygrass's Blog">
+      <meta itemprop="description" content="Welcome">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Skygrass's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/04/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/" class="post-title-link" itemprop="url">机器学习复习</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-04-21 14:37:27 / Modified: 14:46:36" itemprop="dateCreated datePublished" datetime="2024-04-21T14:37:27+08:00">2024-04-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%80%83%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">考试</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>当前对于机器学习基础的学习来说 主要是使用已有数据集或是下载的数据集对模型进行评估 而模型的实现 几乎全部都是调用的sklearn包的内容 因此在进行复习时 我将按照解决问题的一般顺序 而不按照模型进行分类</p>
+<p>目前已学习的模型解决的问题大多数是回归或分类问题。分类解决的是预测下一个目标所属的类别 回归更多的是对下一个数据进行值的预测 对于分类问题 主要是二分类和多分类</p>
+<h3 id="实现机器学习算法的一般顺序"><a href="#实现机器学习算法的一般顺序" class="headerlink" title="实现机器学习算法的一般顺序"></a>实现机器学习算法的一般顺序</h3><p>数据的获取—&gt;x,y的值的确定—&gt;(数据的标准化)—&gt;(散点图的绘制)—&gt;(划分数据集)—&gt;模型训练—&gt;输出训练结果—&gt;模型可视化</p>
+<h4 id="1-数据的获取"><a href="#1-数据的获取" class="headerlink" title="1.数据的获取"></a>1.数据的获取</h4><p>内置数据的在sklearn中的datasets中，加载数据为load_wine() (以葡萄酒数据集为例) 具体要看需要加载的是什么数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line">wine = datasets.load_wine()</span><br></pre></td></tr></table></figure>
+<p>不是sklearn包下的内置数据 通常使用pandas的read_csv或read_excel</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">data = pd.read_csv(<span class="string">&#x27;文件名&#x27;</span>)<span class="comment">#同一目录下直接写文件名 或者使用绝对路径r&#x27;路径&#x27;</span></span><br><span class="line">data = pd.read_excel() <span class="comment">#同上</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-x-y的值的确定"><a href="#2-x-y的值的确定" class="headerlink" title="2.x,y的值的确定"></a>2.x,y的值的确定</h4><p>直接通过内置数据集获取对应x,y</p>
+<p>x选取前两列数据 y就是target 内置的数据集 都有几个键 data指的就是特征值 target是类别 这是已经封装好的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">X = wine.data[:,<span class="number">0</span>:<span class="number">2</span>] <span class="comment">#全部行 前两列 使用切片</span></span><br><span class="line"><span class="comment">#需要选取不连续的数据时</span></span><br><span class="line">X = wine.data[:,[<span class="number">1</span>,<span class="number">3</span>]] <span class="comment">#第二列 第四列</span></span><br><span class="line">y = wine.target</span><br></pre></td></tr></table></figure>
+<p>通过已有的csv文件或excel文件读取时 不能直接写data[-1]这种</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">X = data.iloc[:,[<span class="number">0</span>,<span class="number">2</span>]] <span class="comment">#第1列 第3列</span></span><br><span class="line">y = data.iloc[:,-<span class="number">1</span>]</span><br><span class="line"><span class="comment">#在知道标签名的情况下 也可以使用(但是输出了肯定知道列名了)</span></span><br><span class="line">X = data.drop(<span class="string">&#x27;去除的列名1&#x27;</span>,<span class="string">&#x27;去除的列名2&#x27;</span>,...,axis=<span class="number">1</span>)</span><br><span class="line">y = data[<span class="string">&#x27;特征列名&#x27;</span>]</span><br></pre></td></tr></table></figure>
+<p>但是也会遇到标签值不是数字的情况 主要有两种解决办法 一种是独热编码 另一种是标签编码 在之前的示例中 x值需要编码的用了独热编码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#标签编码</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> LabelEncoder</span><br><span class="line">encode = LabelEncoder()</span><br><span class="line">encode_data = encode.fit_transform(<span class="string">&#x27;需要转换的列名&#x27;</span>)</span><br><span class="line"><span class="comment">#独热编码</span></span><br><span class="line">encoded_data = pd.get_dummies(<span class="string">&#x27;数据所在的整个列表&#x27;</span>,column=[<span class="string">&#x27;列名&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<h4 id="3-数据的标准化"><a href="#3-数据的标准化" class="headerlink" title="3.数据的标准化"></a>3.数据的标准化</h4><p>并不是所有的数据都需要进行标准化 主要是看x的不同列之间的数值差距是否足够大 需要靠标准化来消除这一部分影响<br>数据的标准化的方法有很多种 在sklearn中的preprocessing中 选择哪一种 可以根据数据的特征 也可以根据模型的准确率</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> MinmaxScaler,StandardScaler,Normalizer</span><br><span class="line"><span class="comment">#创建标准化对象</span></span><br><span class="line">scaler = MinmaxScaler() </span><br><span class="line">scaler = StandardScaler() </span><br><span class="line">scaler = Normalizer() </span><br><span class="line">X = scaler.fit_transform(X) <span class="comment">#标准化之后的X</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-散点图的绘制"><a href="#4-散点图的绘制" class="headerlink" title="4. 散点图的绘制"></a>4. 散点图的绘制</h4><p>并不是所有情况都需要在这一步进行散点图的绘制 但是在最后对模型进行可视化时 一般都会在上面绘制原始数据<br>散点图的绘制通常使用的是matplotlib.pyplot中的scatter 这里需要呈现出不同类别 同时这是一个二维图 需要有x轴和y轴 x我们使用X中的第一列数据 y使用X中的第二列数据 分类器c=y 即按照y的取值不同使用不同的颜色标记 cmap值我认为是不同的颜色系列 s是散点大小 edgecolor是边缘颜色</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment">#分类的画法</span></span><br><span class="line"><span class="comment">#如果前面使用的是iloc 那么这里的x,y也需要再加iloc</span></span><br><span class="line">plt.scatter(X[:,<span class="number">0</span>],X[:,<span class="number">1</span>],c=y,s=<span class="number">40</span>,cmap=<span class="string">&#x27;autumn&#x27;</span>,edgecolor=<span class="string">&#x27;k&#x27;</span>)</span><br><span class="line">plt.xlim((-<span class="number">0.5</span>,<span class="number">1.5</span>)) <span class="comment">#设置x轴坐标范围</span></span><br><span class="line">plt.ylim((-<span class="number">0.5</span>,<span class="number">1.5</span>)) </span><br><span class="line">plt.show()</span><br><span class="line"><span class="comment">#回归</span></span><br><span class="line">x = data[<span class="string">&#x27;特征列&#x27;</span>].values.reshape(-<span class="number">1</span>,<span class="number">1</span>) <span class="comment">#1列 不固定行 这时x就是只有单一的特征</span></span><br><span class="line">plt.scatter(x,y,s=<span class="number">80</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h4 id="5-划分数据集"><a href="#5-划分数据集" class="headerlink" title="5.划分数据集"></a>5.划分数据集</h4><p>划分数据使用的是sklearn.model_selection中的train_test_split </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">x_train,x_test,y_train,y_test = train_test_split(X,y,test_size=<span class="number">0.2</span>,random_state=<span class="number">100</span>) <span class="comment">#设置测试集比例和随机状态</span></span><br></pre></td></tr></table></figure>
+<h4 id="6-模型训练-输出训练结果"><a href="#6-模型训练-输出训练结果" class="headerlink" title="6.模型训练 输出训练结果"></a>6.模型训练 输出训练结果</h4><h5 id="线性回归模型"><a href="#线性回归模型" class="headerlink" title="线性回归模型"></a>线性回归模型</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression <span class="comment">#导入线性回归的包</span></span><br><span class="line">reg = LinearRegression() <span class="comment">#创建回归器</span></span><br><span class="line">reg.fit(x_train,y_train)</span><br><span class="line"><span class="comment">#一般输出k和b</span></span><br><span class="line">reg.score(x_test,y_test)</span><br><span class="line">reg.coef_ <span class="comment">#k</span></span><br><span class="line">reg.intercept_ <span class="comment">#b</span></span><br></pre></td></tr></table></figure>
+<h5 id="岭回归模型"><a href="#岭回归模型" class="headerlink" title="岭回归模型"></a>岭回归模型</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> Ridge <span class="comment">#导入岭回归的包</span></span><br><span class="line">rid = Ridge(alpha=<span class="number">0.5</span>) <span class="comment">#alpha 正则化系数 值越大 越不容易过拟合</span></span><br><span class="line">rid.fit(x_train,y_train)</span><br><span class="line"><span class="comment">#一般输出k和b</span></span><br><span class="line">rid.score(x_test,y_test)</span><br><span class="line">rid.coef_ <span class="comment">#k</span></span><br><span class="line">rid.intercept_ <span class="comment">#b</span></span><br></pre></td></tr></table></figure>
+<h5 id="梯度下降模型"><a href="#梯度下降模型" class="headerlink" title="梯度下降模型"></a>梯度下降模型</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> SDGRegression <span class="comment">#导入梯度下降的包</span></span><br><span class="line">SDG = SDGRegression() </span><br><span class="line">SDG.fit(x_train,y_train)</span><br><span class="line"><span class="comment">#一般输出k和b</span></span><br><span class="line">SDG.score(x_test,y_test)</span><br><span class="line">SDG.coef_ <span class="comment">#k</span></span><br><span class="line">SDG.intercept_ <span class="comment">#b</span></span><br></pre></td></tr></table></figure>
+<h5 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h5><p>这是一个分类模型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> tree</span><br><span class="line">tre = tree.DecisionTreeClassifier(max_depth=<span class="number">3</span>) <span class="comment">#最大深度</span></span><br><span class="line">tre.fit(x_train,y_train)</span><br></pre></td></tr></table></figure>
+<h5 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line">ran = RandomForestClassifier(n_estimators=<span class="number">3</span>) <span class="comment">#树的数目</span></span><br><span class="line">ran.fit(x_train,y_train)</span><br></pre></td></tr></table></figure>
+<h5 id="svm模型-SVC"><a href="#svm模型-SVC" class="headerlink" title="svm模型(SVC)"></a>svm模型(SVC)</h5><p>在sklearn中 训练 评估模型 SVC的参数不知道 可以先输出空的模型 得到默认值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm</span><br><span class="line">svc = svm.SVC(kernel=<span class="string">&#x27;rbf&#x27;</span>,gamma=<span class="number">0.7</span>,C=<span class="number">1</span>) <span class="comment">#kernel指的是核函数 默认状态下就是&#x27;rbf&#x27;(径向基内核) gamma是核函数参数 默认是&#x27;auto&#x27; C是惩罚参数 默认就是1 趋向于准确拟合训练集 泛化能力弱</span></span><br><span class="line">svc.fit(x_train,y_train)</span><br><span class="line">svc.score(x_test,y_test)</span><br></pre></td></tr></table></figure>
+<h5 id="svm模型-SVR"><a href="#svm模型-SVR" class="headerlink" title="svm模型(SVR)"></a>svm模型(SVR)</h5><p>SVR是利用支持向量机进行回归的算法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm</span><br><span class="line">svr = svm.svr()</span><br><span class="line">svr.fit(x_train,y_train)</span><br><span class="line">svr.score(x_test,y_test)</span><br></pre></td></tr></table></figure>
+<h4 id="7-模型可视化"><a href="#7-模型可视化" class="headerlink" title="7.模型可视化"></a>7.模型可视化</h4><h5 id="决策树和随机森林"><a href="#决策树和随机森林" class="headerlink" title="决策树和随机森林"></a>决策树和随机森林</h5><p>这两个都是分类模型 所以得到的结果是与支持向量机呈现的结果是差不多的 都是用一个网格图 然后把散点画在里面 用不同的颜色分类</p>
+<p>网格可以使用x,y的最大值和最小值作为边界 也可以自己设置 使用np.meshgrid对象 xx代表x的网格 yy代表y的网格 使用np.arange获取连续的点 使用pcolormesh函数画出不同类别的分类结果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x_min,x_max = x[:,<span class="number">0</span>].<span class="built_in">min</span>()-<span class="number">1</span>,x[:,<span class="number">0</span>].<span class="built_in">max</span>()+<span class="number">1</span></span><br><span class="line">y_min,y_max = x[:,<span class="number">1</span>].<span class="built_in">min</span>()-<span class="number">1</span>,x[:,<span class="number">1</span>].<span class="built_in">max</span>()+<span class="number">1</span></span><br><span class="line">xx,yy = np.meshgrid(np.arange(x_min,x_max,<span class="number">0.02</span>),np.arange(y_min,y_max,<span class="number">0.02</span>))</span><br><span class="line">Z = tre.predict(np.c_(xx.ravel(),yy.ravel())) <span class="comment">#tre是模型</span></span><br><span class="line">plt.figure(figsize=(<span class="number">9</span>,<span class="number">6</span>)) <span class="comment">#设置画布的大小</span></span><br><span class="line">plt.pcolormesh(xx,yy,Z,cmap=<span class="string">&#x27;cool&#x27;</span>)</span><br><span class="line">plt.scatter(x[:,<span class="number">0</span>],x[:,<span class="number">1</span>],c=y,s=<span class="number">40</span>,cmap=<span class="string">&#x27;autumn&#x27;</span>,edgecolor=<span class="string">&#x27;k&#x27;</span>) <span class="comment">#绘制散点图</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>决策树中还可以画出每一步的决策</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree.plot_tree(tre) <span class="comment">#tree是tree这个包 tre是决策树的模型名字</span></span><br></pre></td></tr></table></figure>
+<h5 id="决策边界绘制-支持向量机SVC"><a href="#决策边界绘制-支持向量机SVC" class="headerlink" title="决策边界绘制(支持向量机SVC)"></a>决策边界绘制(支持向量机SVC)</h5><p>这里使用的方法是绘制等高线图的方法 核心函数是pyplot的contour 首先需要绘制网格 网格可以使用x,y的最大值和最小值作为边界 也可以自己设置 使用np.meshgrid对象 xx代表x的网格 yy代表y的网格 使用np.arange获取连续的点 contour的参数有xx,yy,Z,其他 这是绘制等高线的函数 xx,yy是网格的x,y范围 关键在于Z Z本身的含义是每个坐标的高度值 使用预测结果 作为高度(划分依据)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">xx,yy = np.meshgrid(np.arange(-<span class="number">0.5</span>,<span class="number">1.5</span>,<span class="number">0.02</span>),np.arange(-<span class="number">0.5</span>,<span class="number">1.5</span>,<span class="number">0.02</span>))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">plot</span>(<span class="params">ax,clf,xx,yy,**param</span>):</span><br><span class="line">    Z = clf.predict(np.c_(xx.ravel(),yy.ravel())) <span class="comment">#ravel()把xx,yy变成一维数组 np.c_()把这两个一维数组 变成形如x,y的二维数组 再使用predict训练模型 这里的clf就是SVC模型</span></span><br><span class="line">    Z = Z.reshape(xx.shape) <span class="comment">#转换形状 便于绘制</span></span><br><span class="line">    out = ax.contour(xx,yy,Z,**param) <span class="comment">#**param是指其他的更多参数</span></span><br><span class="line">    <span class="keyword">return</span> out</span><br><span class="line">fig,ax = plt.subplot() <span class="comment">#获取图和坐标轴</span></span><br><span class="line"><span class="comment">#也可以是ax = plt.gca()</span></span><br><span class="line">plot(ax,svr,xx,yy,cmap=<span class="string">&#x27;autumn&#x27;</span>,alpha=<span class="number">0.8</span>) <span class="comment">#alpha是透明度</span></span><br><span class="line">ax.scatter(X[:,<span class="number">0</span>],X[:,<span class="number">1</span>],c=y,s=<span class="number">40</span>,cmap=<span class="string">&#x27;autumn&#x27;</span>,edgecolor=<span class="string">&#x27;k&#x27;</span>) <span class="comment">#绘制散点图</span></span><br><span class="line">ax.set_xlim(-<span class="number">0.5</span>,<span class="number">1.5</span>) <span class="comment">#设置坐标轴范围</span></span><br><span class="line">ax.set_ylim(-<span class="number">0.5</span>,<span class="number">1.5</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h5 id="线性模型"><a href="#线性模型" class="headerlink" title="线性模型"></a>线性模型</h5><p>不管是线性回归 岭回归 还是梯度下降 都是线性的表示形式 只需要画出散点图和对应的拟合直线即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plt.scatter(x_train,y_train,s=<span class="number">50</span>)</span><br><span class="line">plt.plot(x_train,reg.predict(x_train),c=<span class="string">&#x27;y&#x27;</span>) <span class="comment">#reg是模型名称</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -999,92 +1116,6 @@ mjx-container[display="true"] + br {
           <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个长度为n的排列a，需要将这个排列变成b。每次可以选择一个数字往左移若干个位置。请求出最小移动次数。</p>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>相对位置不变的 那就不需要移动 相对位置改变的 就需要移动 记录下原数组在现在这个数组的下标 如果右侧的数比左侧的数小 就答案加1<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#时间复杂度O(n²)</span></span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">num1 = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split()))</span><br><span class="line">num2 = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split()))</span><br><span class="line">l = []</span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(num1)):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(num2)):</span><br><span class="line">        <span class="keyword">if</span> num1[i] == num2[j]:</span><br><span class="line">            l.append(j)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n-<span class="number">1</span>):</span><br><span class="line">    <span class="keyword">if</span> l[i] &gt; l[i+<span class="number">1</span>]:</span><br><span class="line">        ans += <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(ans)</span><br></pre></td></tr></table></figure><br>我的解法在第一步找出下标这是对的 但是用了两个for循环 导致超时了 第二步我的理解是有问题的 不是相邻的 是只要右侧比左侧小就加1 </p>
 <h3 id="正确解法"><a href="#正确解法" class="headerlink" title="正确解法"></a>正确解法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">num1 = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split()))</span><br><span class="line">num2 = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split()))</span><br><span class="line">l = [<span class="number">0</span>]*n </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    l[num2[i]-<span class="number">1</span>] = i <span class="comment">#l[x-1]表示 数字x 在num2的下标 **例如** 4 5 2 1 3 对应的l数组就是[3 2 4 0 1] 表示4在第1个</span></span><br><span class="line">c = [l[num1[i]-<span class="number">1</span>] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)] <span class="comment">#列表推导式 按顺序写出num1的次序 **例如** 5 1 3 2 4 5在l中是1 以此类推 </span></span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line">max_val = <span class="number">0</span> <span class="comment">#记录当前最大值</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n): <span class="comment">#遍历列表 只要右侧比左侧小就加1 </span></span><br><span class="line">    <span class="keyword">if</span> c[i] &lt; max_val:</span><br><span class="line">        ans += <span class="number">1</span></span><br><span class="line">    max_val = <span class="built_in">max</span>(max_val,c[i]) <span class="comment">#结束判断一次更新max_val</span></span><br><span class="line"><span class="built_in">print</span>(ans)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://skygrass5.github.io/2023/07/17/%E6%8E%A8%E7%AE%B1%E5%AD%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/welcome.jpg">
-      <meta itemprop="name" content="skygrass">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Skygrass's Blog">
-      <meta itemprop="description" content="Welcome">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Skygrass's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/07/17/%E6%8E%A8%E7%AE%B1%E5%AD%90/" class="post-title-link" itemprop="url">推箱子</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-07-17 22:57:00" itemprop="dateCreated datePublished" datetime="2023-07-17T22:57:00+08:00">2023-07-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-07-20 00:15:29" itemprop="dateModified" datetime="2023-07-20T00:15:29+08:00">2023-07-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每日一题</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>在一个高度为H的箱子前方，有一个长和高为N的障碍物。障碍物的每一列存在一个连续的缺口，第i列的缺口从第l个单位到第h个单位（从底部由0开始数）。现在请你清理出一条高度为H的通道，使得箱子可以直接推出去。请输出最少需要清理的障碍物面积。如下图为样例中的障碍物，长和高度均为5，箱子高度为2。不需要考虑箱子会掉入某些坑中。最少需要移除两个单位的障碍物可以造出一条高度为2的通道。</p>
-<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><p>5 2<br>2 3<br>1 2<br>2 3<br>1 2<br>2 3<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">n,h = <span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">d,a,<span class="built_in">sum</span> = [<span class="number">0</span>]*(n+<span class="number">10</span>),[<span class="number">0</span>]*(n+<span class="number">10</span>),[<span class="number">0</span>]*(n+<span class="number">10</span>) <span class="comment">#初始化数组</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">    li,hi = <span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">    d[li] += <span class="number">1</span> <span class="comment">#差分</span></span><br><span class="line">    d[hi+<span class="number">1</span>] -= <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">    a[i] = a[i-<span class="number">1</span>] + d[i-<span class="number">1</span>] <span class="comment">#原数组</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">    <span class="built_in">sum</span>[i] = <span class="built_in">sum</span>[i-<span class="number">1</span>]+a[i] <span class="comment">#前缀和</span></span><br><span class="line">ans = <span class="built_in">sum</span>[h-<span class="number">1</span>] <span class="comment">#前h个数的和</span></span><br><span class="line"><span class="keyword">for</span> left <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n-h+<span class="number">2</span>):</span><br><span class="line">    ans = <span class="built_in">max</span>(ans,<span class="built_in">sum</span>[left+h-<span class="number">1</span>]-<span class="built_in">sum</span>[left-<span class="number">1</span>]) <span class="comment">#求长度为h的数组的最大值</span></span><br><span class="line"><span class="built_in">print</span>(n*h-ans)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
