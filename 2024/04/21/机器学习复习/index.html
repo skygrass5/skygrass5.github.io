@@ -27,7 +27,7 @@
 <meta property="og:description" content="当前对于机器学习基础的学习来说 主要是使用已有数据集或是下载的数据集对模型进行评估 而模型的实现 几乎全部都是调用的sklearn包的内容 因此在进行复习时 我将按照解决问题的一般顺序 而不按照模型进行分类 目前已学习的模型解决的问题大多数是回归或分类问题。分类解决的是预测下一个目标所属的类别 回归更多的是对下一个数据进行值的预测 对于分类问题 主要是二分类和多分类 实现机器学习算法的一般顺序数据">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-04-21T06:37:27.000Z">
-<meta property="article:modified_time" content="2024-04-21T06:46:36.346Z">
+<meta property="article:modified_time" content="2024-05-31T07:49:50.628Z">
 <meta property="article:author" content="skygrass">
 <meta property="article:tag" content="Machine Learning">
 <meta name="twitter:card" content="summary">
@@ -128,17 +128,17 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -193,9 +193,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-04-21 14:37:27 / Modified: 14:46:36" itemprop="dateCreated datePublished" datetime="2024-04-21T14:37:27+08:00">2024-04-21</time>
+      <time title="Created: 2024-04-21 14:37:27" itemprop="dateCreated datePublished" datetime="2024-04-21T14:37:27+08:00">2024-04-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-05-31 15:49:50" itemprop="dateModified" datetime="2024-05-31T15:49:50+08:00">2024-05-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -219,11 +225,19 @@
     <div class="post-body" itemprop="articleBody">
         <p>当前对于机器学习基础的学习来说 主要是使用已有数据集或是下载的数据集对模型进行评估 而模型的实现 几乎全部都是调用的sklearn包的内容 因此在进行复习时 我将按照解决问题的一般顺序 而不按照模型进行分类</p>
 <p>目前已学习的模型解决的问题大多数是回归或分类问题。分类解决的是预测下一个目标所属的类别 回归更多的是对下一个数据进行值的预测 对于分类问题 主要是二分类和多分类</p>
-<h3 id="实现机器学习算法的一般顺序"><a href="#实现机器学习算法的一般顺序" class="headerlink" title="实现机器学习算法的一般顺序"></a>实现机器学习算法的一般顺序</h3><p>数据的获取—&gt;x,y的值的确定—&gt;(数据的标准化)—&gt;(散点图的绘制)—&gt;(划分数据集)—&gt;模型训练—&gt;输出训练结果—&gt;模型可视化</p>
+<h3 id="实现机器学习算法的一般顺序"><a href="#实现机器学习算法的一般顺序" class="headerlink" title="实现机器学习算法的一般顺序"></a>实现机器学习算法的一般顺序</h3><p>数据的获取(预处理)—&gt;x,y的值的确定—&gt;(数据的标准化)—&gt;(散点图的绘制)—&gt;(划分数据集)—&gt;模型训练—&gt;输出训练结果—&gt;模型可视化</p>
 <h4 id="1-数据的获取"><a href="#1-数据的获取" class="headerlink" title="1.数据的获取"></a>1.数据的获取</h4><p>内置数据的在sklearn中的datasets中，加载数据为load_wine() (以葡萄酒数据集为例) 具体要看需要加载的是什么数据</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line">wine = datasets.load_wine()</span><br></pre></td></tr></table></figure>
 <p>不是sklearn包下的内置数据 通常使用pandas的read_csv或read_excel</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">data = pd.read_csv(<span class="string">&#x27;文件名&#x27;</span>)<span class="comment">#同一目录下直接写文件名 或者使用绝对路径r&#x27;路径&#x27;</span></span><br><span class="line">data = pd.read_excel() <span class="comment">#同上</span></span><br></pre></td></tr></table></figure>
+<p>查看数据类型，是否存在空值(只适用于dataframe对象)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.info()</span><br></pre></td></tr></table></figure>
+<p>可以把sklearn的内置数据集变成dataframe的对象，只需要导入pandas的包</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#这里的iris.data data是内置数据集里的x值,feature_names是x值的列名</span></span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line">iris = load_iris()</span><br><span class="line">iris.keys() <span class="comment">#可以查看封装的键</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df = pd.DataFrame(iris.data,columns=iris.feature_names)</span><br><span class="line">df[<span class="string">&#x27;target&#x27;</span>] = iris.target <span class="comment">#把目标值写入最后一列 列名为target</span></span><br></pre></td></tr></table></figure>
+<p>缺失值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;缺失值：\n&#x27;</span>, data.isnull().<span class="built_in">sum</span>())</span><br><span class="line">data = data.dropna()  <span class="comment"># 去除缺失值的这一行</span></span><br></pre></td></tr></table></figure>
+<p>重复值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;重复值：\n&#x27;</span>, data.duplicated().<span class="built_in">sum</span>())</span><br><span class="line">data = data.drop_duplicates()  <span class="comment"># 删除重复值的行</span></span><br></pre></td></tr></table></figure>
 <h4 id="2-x-y的值的确定"><a href="#2-x-y的值的确定" class="headerlink" title="2.x,y的值的确定"></a>2.x,y的值的确定</h4><p>直接通过内置数据集获取对应x,y</p>
 <p>x选取前两列数据 y就是target 内置的数据集 都有几个键 data指的就是特征值 target是类别 这是已经封装好的</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">X = wine.data[:,<span class="number">0</span>:<span class="number">2</span>] <span class="comment">#全部行 前两列 使用切片</span></span><br><span class="line"><span class="comment">#需要选取不连续的数据时</span></span><br><span class="line">X = wine.data[:,[<span class="number">1</span>,<span class="number">3</span>]] <span class="comment">#第二列 第四列</span></span><br><span class="line">y = wine.target</span><br></pre></td></tr></table></figure>
@@ -233,7 +247,9 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#标签编码</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> LabelEncoder</span><br><span class="line">encode = LabelEncoder()</span><br><span class="line">encode_data = encode.fit_transform(<span class="string">&#x27;需要转换的列名&#x27;</span>)</span><br><span class="line"><span class="comment">#独热编码</span></span><br><span class="line">encoded_data = pd.get_dummies(<span class="string">&#x27;数据所在的整个列表&#x27;</span>,column=[<span class="string">&#x27;列名&#x27;</span>])</span><br></pre></td></tr></table></figure>
 <h4 id="3-数据的标准化"><a href="#3-数据的标准化" class="headerlink" title="3.数据的标准化"></a>3.数据的标准化</h4><p>并不是所有的数据都需要进行标准化 主要是看x的不同列之间的数值差距是否足够大 需要靠标准化来消除这一部分影响<br>数据的标准化的方法有很多种 在sklearn中的preprocessing中 选择哪一种 可以根据数据的特征 也可以根据模型的准确率</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> MinmaxScaler,StandardScaler,Normalizer</span><br><span class="line"><span class="comment">#创建标准化对象</span></span><br><span class="line">scaler = MinmaxScaler() </span><br><span class="line">scaler = StandardScaler() </span><br><span class="line">scaler = Normalizer() </span><br><span class="line">X = scaler.fit_transform(X) <span class="comment">#标准化之后的X</span></span><br></pre></td></tr></table></figure>
-<h4 id="4-散点图的绘制"><a href="#4-散点图的绘制" class="headerlink" title="4. 散点图的绘制"></a>4. 散点图的绘制</h4><p>并不是所有情况都需要在这一步进行散点图的绘制 但是在最后对模型进行可视化时 一般都会在上面绘制原始数据<br>散点图的绘制通常使用的是matplotlib.pyplot中的scatter 这里需要呈现出不同类别 同时这是一个二维图 需要有x轴和y轴 x我们使用X中的第一列数据 y使用X中的第二列数据 分类器c=y 即按照y的取值不同使用不同的颜色标记 cmap值我认为是不同的颜色系列 s是散点大小 edgecolor是边缘颜色</p>
+<h4 id="4-散点图的绘制"><a href="#4-散点图的绘制" class="headerlink" title="4. 散点图的绘制"></a>4. 散点图的绘制</h4><p>绘图</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plt.rcParams[<span class="string">&quot;font.sans-serif&quot;</span>] = [<span class="string">&quot;SimHei&quot;</span>]  <span class="comment"># 设置字体</span></span><br><span class="line">plt.rcParams[<span class="string">&quot;axes.unicode_minus&quot;</span>] = <span class="literal">False</span> <span class="comment">#坐标轴调整</span></span><br><span class="line"><span class="comment">#也可以临时调整字体</span></span><br></pre></td></tr></table></figure>
+<p>并不是所有情况都需要在这一步进行散点图的绘制 但是在最后对模型进行可视化时 一般都会在上面绘制原始数据<br>散点图的绘制通常使用的是matplotlib.pyplot中的scatter 这里需要呈现出不同类别 同时这是一个二维图 需要有x轴和y轴 x我们使用X中的第一列数据 y使用X中的第二列数据 分类器c=y 即按照y的取值不同使用不同的颜色标记 cmap值我认为是不同的颜色系列 s是散点大小 edgecolor是边缘颜色</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment">#分类的画法</span></span><br><span class="line"><span class="comment">#如果前面使用的是iloc 那么这里的x,y也需要再加iloc</span></span><br><span class="line">plt.scatter(X[:,<span class="number">0</span>],X[:,<span class="number">1</span>],c=y,s=<span class="number">40</span>,cmap=<span class="string">&#x27;autumn&#x27;</span>,edgecolor=<span class="string">&#x27;k&#x27;</span>)</span><br><span class="line">plt.xlim((-<span class="number">0.5</span>,<span class="number">1.5</span>)) <span class="comment">#设置x轴坐标范围</span></span><br><span class="line">plt.ylim((-<span class="number">0.5</span>,<span class="number">1.5</span>)) </span><br><span class="line">plt.show()</span><br><span class="line"><span class="comment">#回归</span></span><br><span class="line">x = data[<span class="string">&#x27;特征列&#x27;</span>].values.reshape(-<span class="number">1</span>,<span class="number">1</span>) <span class="comment">#1列 不固定行 这时x就是只有单一的特征</span></span><br><span class="line">plt.scatter(x,y,s=<span class="number">80</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <h4 id="5-划分数据集"><a href="#5-划分数据集" class="headerlink" title="5.划分数据集"></a>5.划分数据集</h4><p>划分数据使用的是sklearn.model_selection中的train_test_split </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">x_train,x_test,y_train,y_test = train_test_split(X,y,test_size=<span class="number">0.2</span>,random_state=<span class="number">100</span>) <span class="comment">#设置测试集比例和随机状态</span></span><br></pre></td></tr></table></figure>
@@ -277,6 +293,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2024/10/25/Round-981-Div3/" rel="next" title="Round 981 Div3">
+                  Round 981 Div3 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
